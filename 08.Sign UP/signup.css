@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0,8,120,1) 0%, rgba(95,184,224,1) 100%);
+}
+
+
+/* login */
+
+.signup {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.signup .signup-card {
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px;
+    width: 350px;
+}
+
+.signup-card img {
+    margin: auto;
+    border: none;
+    border-radius: 50%;
+}
+
+.signup-card-heading {
+    margin-top: 12px;
+}
+
+.signup-card-heading p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.signup-card form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.signup-card form .input {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(80, 78, 78);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.signup-settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    margin: 5px;
+}
+
+ .submit-btn {
+    margin-top: 30px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid rgb(80, 78, 78);
+    border-radius: 30px;
+} 
+
+.submit-btn:hover {
+    cursor: pointer;
+}
+
+.signup-card-foot p {
+    text-align: center;
+    font-size: 15px;
+}
+
+.signup-card-foot span {
+  font-weight: bolder;  
+} 
+
+
+.error-message {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: red;
+}

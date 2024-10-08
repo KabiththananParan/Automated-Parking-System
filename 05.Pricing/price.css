@@ -1,0 +1,95 @@
+body {
+    background-image: linear-gradient(to bottom, rgba(0,8,120,1) 0%, rgba(95,184,224,1) 100%);
+}
+
+.price-hed {
+    font-size: 50px;
+    text-align: center;
+}
+
+.packages {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    /* grid-template-rows: 400px 400px; */
+    column-gap: 100px;
+    row-gap: 100px;
+    
+    padding-left: 340px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.packages-basic {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    width: 350px;
+    height: 520px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+} 
+
+.packages-pro {
+    background-color: #202842;
+    border: none;
+    border-radius: 20px;
+    width: 350px;
+    height: 520px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+}
+
+.packages-basic h2, .packages-pro h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.packages-basic span, .packages-pro span {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.packages-basic p, .packages-pro p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.packages-basic {
+    color: #202842;
+}
+
+.packages-pro {
+    color: white;
+}
+
+.packages ol {
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.packages li {
+    list-style-type: circle;
+    margin-bottom: 30px;
+}
+
+.btn-1, .btn-2 {
+    width: 150px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-1 {
+    margin-left: 95px;
+    margin-top: 45px;
+    background-color: #202842;
+    color: white;
+}
+
+.btn-2 {
+    margin-left: 95px;
+    background-color: white;
+    color: #202842;
+}
