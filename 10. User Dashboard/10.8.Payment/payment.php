@@ -3,15 +3,13 @@ session_start();
 require '../config.php';
 
 if (isset($_POST["submit_btn"])) {
-    // Check if user is logged in
     if (!isset($_SESSION['user_id'])) {
-        header("Location: login.php"); // Redirect to login if not logged in
+        header("Location: login.php"); 
         exit();
     } else {
         $user_id = $_SESSION['user_id'];
     }
 
-    // Retrieve form data
     $packagetype = $_POST["package_type"];
     $selectedLocation = $_POST["selected_location"];
     $paymentMethod = $_POST["payment-method"];
@@ -19,9 +17,9 @@ if (isset($_POST["submit_btn"])) {
     $fullName = $_POST["fullName"];
     $NIC = $_POST["NIC"];
     $vechileNo = $_POST["vechile_no"];
-    $hours = intval($_POST["hours"]); // Convert to integer
+    $hours = intval($_POST["hours"]); 
 
-    // Check for package
+   
     $checkPackage = "SELECT * FROM price_packages WHERE package_name = '$packagetype'";
     $result1 = $con->query($checkPackage);
 
@@ -31,22 +29,21 @@ if (isset($_POST["submit_btn"])) {
         $price = $package['package_price'];
         $totalAmount = $price * $hours;
 
-        // Insert into payment table
+     
         $sql = "INSERT INTO payment (full_name, invoice_no, NIC_No, vechicle_no, package_id, location, method, parking_hours, total_amount, user_id, date_time) 
                 VALUES ('$fullName', '$invoice_number', '$NIC', '$vechileNo', '$package_id', '$selectedLocation', '$paymentMethod', '$hours', '$totalAmount', '$user_id', NOW())";
 
         if ($con->query($sql) === TRUE) {
-            // Redirect after successful insertion
             header("Location: ../10.0.My Account/account.php");
             exit();
         } else {
-            echo "Error: " . $con->error; // Display error for debugging
+            echo "Error: " . $con->error; 
         }
     } else {
-        echo "Selected package not found."; // Handle case where no package is found
+        echo "Selected package not found.";
     }
 
-    $con->close(); // Close the database connection
+    $con->close();
 }
 ?> 
 
@@ -187,53 +184,6 @@ if (isset($_POST["submit_btn"])) {
         </div>
 
     </div>
-
-    <!-- <?php
-    if (isset($_POST["submit_btn"])) {
-        if (!isset($_SESSION['user_id'])) {
-            echo "User is not logged in";
-            exit();
-        } else {
-            $user_id = $_SESSION['user_id'];
-        }
-
-        $packagetype = $_POST["package_type"];
-        $selectedLocation = $_POST["selected_location"];
-        $paymentMethod = $_POST["payment-method"];
-        $invoice_number = $_POST["invoice_number"];
-        $fullName = $_POST["fullName"];
-        $NIC = $_POST["NIC"];
-        $vechileNo = $_POST["vechile_no"];
-        $hours = $_POST["hours"];
-
-        // Check for package
-        $checkPackage = "SELECT * FROM price_packages WHERE package_name = '$packagetype'";
-        $result1 = $con->query($checkPackage);
-
-        if ($result1->num_rows > 0) {
-            $package = $result1->fetch_assoc();
-            $package_id = $package['package_id'];
-            $price = $package['package_price'];
-
-            $totalAmount = $price * $hours;
-
-            // Insert into payment table
-            $sql = "INSERT INTO payment (full_name, invoice_no, NIC_No, vechicle_no, package_id, location, method, parking_hours, total_amount, user_id, date_time) 
-                    VALUES ('$fullName', '$invoice_number', '$NIC', '$vechileNo', '$package_id', '$selectedLocation', '$paymentMethod', '$hours', '$totalAmount', '$user_id', NOW())";
-
-            if ($con->query($sql)) {
-                // Redirect after successful insertion
-                header("Location: ../10.0.My Account/account.php");
-                exit();
-            } else {
-                echo "Error: " . $con->error;
-            }
-        }
-    }
-
-    $con->close();
-    ob_end_flush(); // Flush the output buffer
-    ?> -->
 
 </body>
 </html>

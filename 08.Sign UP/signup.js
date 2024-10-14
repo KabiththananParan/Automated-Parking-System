@@ -32,9 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!email.value.trim()) {
             isValid = false;
             showError(email, "Email is required.");
-        } else if (!email.value.includes("@")) {
-            isValid = false;
-            showError(email, "Please enter a valid email.");
+        } else {
+            const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!emailPattern.test(email.value)) {
+                isValid = false;
+                showError(email, "Please enter a valid email.");
+            }
         }
 
         if (!password.value.trim()) {

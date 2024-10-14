@@ -69,7 +69,7 @@
             </div>
             
 
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <form id="loginForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <label>E-mail</label>
                 <input class="input" type="email" name="email">
                 <br>

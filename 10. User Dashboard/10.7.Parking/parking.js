@@ -9,7 +9,8 @@ function searchParking() {
 
         if (txtValue.toUpperCase().indexOf(input) > -1) {
             parkingAreas[i].style.display = "";
-        } else {
+        } 
+        else {
             parkingAreas[i].style.display = "none";
         }
     }
