@@ -6,7 +6,8 @@ if (isset($_POST["submit_btn"])) {
     if (!isset($_SESSION['user_id'])) {
         header("Location: login.php"); 
         exit();
-    } else {
+    } 
+    else {
         $user_id = $_SESSION['user_id'];
     }
 
@@ -30,16 +31,17 @@ if (isset($_POST["submit_btn"])) {
         $totalAmount = $price * $hours;
 
      
-        $sql = "INSERT INTO payment (full_name, invoice_no, NIC_No, vechicle_no, package_id, location, method, parking_hours, total_amount, user_id, date_time) 
-                VALUES ('$fullName', '$invoice_number', '$NIC', '$vechileNo', '$package_id', '$selectedLocation', '$paymentMethod', '$hours', '$totalAmount', '$user_id', NOW())";
+        $sql = "INSERT INTO payment (full_name, invoice_no, NIC_No, vechicle_no, package_id, location, method, parking_hours, total_amount, user_id, date_time) VALUES ('$fullName', '$invoice_number', '$NIC', '$vechileNo', '$package_id', '$selectedLocation', '$paymentMethod', '$hours', '$totalAmount', '$user_id', NOW())";
 
         if ($con->query($sql) === TRUE) {
             header("Location: ../10.0.My Account/account.php");
             exit();
-        } else {
+        } 
+        else {
             echo "Error: " . $con->error; 
         }
-    } else {
+    } 
+    else {
         echo "Selected package not found.";
     }
 
@@ -104,8 +106,8 @@ if (isset($_POST["submit_btn"])) {
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
             <label>Select Package</label> 
-                <input type="radio" name="package_type" value="Basic" <?php if (isset($_POST['package']) && $_POST['package'] == 'Basic') echo 'checked'; ?>>Basic
-                <input type="radio" name="package_type" value="Pro" <?php if (isset($_POST['package']) && $_POST['package'] == 'Pro') echo 'checked'; ?>>Pro
+                <input type="radio" name="package_type" value="Basic" <?php if ($_POST['package'] && $_POST['package'] == 'Basic') echo 'checked'; ?>>Basic
+                <input type="radio" name="package_type" value="Pro" <?php if ($_POST['package'] && $_POST['package'] == 'Pro') echo 'checked'; ?>>Pro
                 <br>
                 <label>Select Location</label> 
 

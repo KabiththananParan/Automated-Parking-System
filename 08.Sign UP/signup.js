@@ -32,8 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!email.value.trim()) {
             isValid = false;
             showError(email, "Email is required.");
-        } else {
-            const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        } 
+        else {
+            const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //Regex code from google.
+            
             if (!emailPattern.test(email.value)) {
                 isValid = false;
                 showError(email, "Please enter a valid email.");
