@@ -8,14 +8,14 @@ const parkingSlots = document.querySelector(".parking_slots");
 const employees = document.querySelector(".employees");
 const feedbacks = document.querySelector(".feedbacks");
 
-function showDashboard(dashboardToShow) {
+function showDashboard(dashboard_Show) {
     Users.style.display = 'none';
     parkingSlots.style.display = 'none';
     employees.style.display = 'none';
     feedbacks.style.display = 'none';
     
 
-    dashboardToShow.style.display = 'block';
+    dashboard_Show.style.display = 'block';
 }
 
 btn1.addEventListener('click', function() {

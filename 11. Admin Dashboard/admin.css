@@ -55,7 +55,6 @@ th, td {
     text-align: center;
 }
 
-
 form {
     display: inline;
 }
@@ -84,19 +83,15 @@ input[type="text"] {
     color: white;
 }
 
-
-
 .btn-edit {
     background-color: green;
     color: white;
 }
 
-
 .btn-delete {
     background-color: red;
     color: white;
 }
-
 
 input[type="submit"] {
     padding: 10px 15px;

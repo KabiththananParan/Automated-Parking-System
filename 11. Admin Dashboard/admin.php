@@ -87,12 +87,12 @@
                     
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["user_name"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["DOB"]) . "</td>";
+                        echo "<td>" . $row["user_id"] . "</td>";
+                        echo "<td>" . $row["name"] . "</td>";
+                        echo "<td>" . $row["user_name"] . "</td>";
+                        echo "<td>" . $row["email"] . "</td>";
+                        echo "<td>" . $row["phone"] . "</td>";
+                        echo "<td>" . $row["DOB"] . "</td>";
                         echo "<td><form method='post' action='deleteUser.php'><input type='hidden' name='user_id' value='" . $row['user_id'] . "'><input type='submit' class='btn-delete' value='Delete'></form></td>";
                         echo "</tr>";
                     }
@@ -112,11 +112,11 @@
 
         <div style="margin: 20px;" class="parking_slots">
 
-        <form style="margin: 20px;" method="post" action="addParking.php">
-            <label for="location_name">Location Name:</label>
-            <input type="text" id="location_name" name="location_name" required>
-            <input type="submit" class="btn-add" value="Add Parking Location">
-        </form>
+            <form style="margin: 20px;" method="post" action="addParking.php">
+                <label for="location_name">Location Name:</label>
+                <input type="text" id="location_name" name="location_name" required>
+                <input type="submit" class="btn-add" value="Add Parking Location">
+            </form>
             
             <?php 
                 
@@ -133,8 +133,8 @@
                     
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row["location_id"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["location_name"]) . "</td>";
+                        echo "<td>" . $row["location_id"] . "</td>";
+                        echo "<td>" . $row["location_name"] . "</td>";
                         echo "<td><form method='post' action='editParking.php'><input type='hidden' name='location_id' value='" . $row['location_id'] . "'><input type='submit' class='btn-edit' value='Edit'></form></td>";
                         echo "<td><form method='post' action='deleteParking.php'><input type='hidden' name='location_id' value='" . $row['location_id'] . "'><input type='submit' class='btn-delete' value='Delete'></form></td>";
                         echo "</tr>";
@@ -168,13 +168,13 @@
                         
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td>" . htmlspecialchars($row["employee_id"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["full_name"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["contact"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["DOB"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["NIC"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["Salary"]) . "</td>";
+                            echo "<td>" . $row["employee_id"] . "</td>";
+                            echo "<td>" . $row["full_name"] . "</td>";
+                            echo "<td>" . $row["email"] . "</td>";
+                            echo "<td>" . $row["contact"] . "</td>";
+                            echo "<td>" . $row["DOB"] . "</td>";
+                            echo "<td>" . $row["NIC"] . "</td>";
+                            echo "<td>" . $row["Salary"] . "</td>";
                             echo "<td><form method='post' action='editEmployee.php'><input type='hidden' name='employee_id' value='" . $row['employee_id'] . "'><input type='submit' class='btn-edit' value='Edit'></form></td>";
                             echo "<td><form method='post' action='deleteEmployee.php'><input type='hidden' name='employee_id' value='" . $row['employee_id'] . "'><input type='submit' class='btn-delete' value='Delete'></form></td>";
                             echo "</tr>";
@@ -206,9 +206,9 @@
                     
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row["feedback_id"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["user_id"]) . "</td>";
-                        echo "<td>" . htmlspecialchars($row["feedback_msg"]) . "</td>";
+                        echo "<td>" . $row["feedback_id"] . "</td>";
+                        echo "<td>" . $row["user_id"] . "</td>";
+                        echo "<td>" . $row["feedback_msg"] . "</td>";
                         
                         echo "<td>
                                 <form method='post' action='deleteFeedback.php'>

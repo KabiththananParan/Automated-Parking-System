@@ -94,22 +94,22 @@ if ($result->num_rows > 0) {
                 <div class="dashboard-1-top">
                     <div class="details">
                         <p>Name</p>
-                        <button><?php echo htmlspecialchars($user['name']); ?></button>
+                        <button><?php echo $user['name']; ?></button>
                     </div>
         
                     <div class="details">
                         <p>Email</p>
-                        <button><?php echo htmlspecialchars($user['email']); ?></button>
+                        <button><?php echo $user['email']; ?></button>
                     </div>
         
                     <div class="details">
                         <p>DOB</p>
-                        <button><?php echo htmlspecialchars($user['DOB']); ?></button>
+                        <button><?php echo $user['DOB']; ?></button>
                     </div>
         
                     <div class="details">
                         <p>Phone</p>
-                        <button><?php echo htmlspecialchars($user['phone']); ?></button>
+                        <button><?php echo $user['phone']; ?></button>
                     </div>
                 </div>
 

@@ -1,8 +1,7 @@
-
 /* content-1 */
 
 .content-1 {
-    background-color: #1b65b5;
+    background-image: linear-gradient(to bottom, rgba(0,8,120,1) 0%, rgba(95,184,224,1) 100%); /*From cssgradient.io page*/
     text-align: center;
     height: 450px;
     position: relative;
@@ -73,7 +72,7 @@
 
 .content-2 {
     height: 300px;
-    background-color: white;
+    background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%); /*From cssgradient.io page*/
 }
 
 .content-2-btns {
@@ -105,7 +104,7 @@
 .about {
     width: 100%;
     height: 1390px;
-    background-color: #1b65b5;
+    background-image: linear-gradient(to bottom, rgba(0,8,120,1) 0%, rgba(95,184,224,1) 100%);  /*From cssgradient.io page*/
     padding: 10px;
     color: white;
     position: relative;

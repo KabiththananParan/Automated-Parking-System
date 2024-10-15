@@ -1,12 +1,16 @@
-
-
 document.querySelectorAll(".faq-box-set").forEach(faqBoxSet => {
-    const span = faqBoxSet.querySelector("span"); // Select the span inside the faq-box-set
+    const span = faqBoxSet.querySelector("span"); 
 
-    faqBoxSet.addEventListener("click", () => {
+    span.addEventListener("click", () => {
         faqBoxSet.classList.toggle("active");
-        span.textContent = faqBoxSet.classList.contains("active") ? "-" : "+"; // Change span text
+        
+        if (faqBoxSet.classList.contains("active")) {
+            span.textContent = "-"; 
+        } 
+        else {
+            span.textContent = "+"; 
+        }
+        
     });
+    
 });
-
-

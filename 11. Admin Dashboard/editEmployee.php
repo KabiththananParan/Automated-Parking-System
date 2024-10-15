@@ -1,58 +1,44 @@
 <?php
+    require '../config.php'; 
 
-    require '../config.php';
-
-
-    $employee_id = '';
-    $contact = '';
-    $salary = '';
-
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
-    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['employee_id'])) {
+        
         $employee_id = $_POST['employee_id'];
-        $contact = $_POST['contact'];
-        $salary = $_POST['salary'];
 
-    
-        $sql = "UPDATE employees SET contact = ?, salary = ? WHERE employee_id = ?";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("sdi", $contact, $salary, $employee_id);
+        if (isset($_POST['contact']) && isset($_POST['salary'])) {
+            $contact = $_POST['contact'];
+            $salary = $_POST['salary'];
 
-        if ($stmt->execute()) {
-            echo "Employee details updated successfully!";
-            header("Location: ./admin.php"); 
+            $sql = "UPDATE employees SET contact = '$contact', salary = '$salary' WHERE employee_id = '$employee_id'";
+
+            if ($con->query($sql) === TRUE) {
+                echo "Employee details updated successfully!";
+            } 
+            else {
+                echo "Error updating employee: " . $con->error;
+            }
+
+            header("Location: admin.php");
             exit();
-        } else {
-            echo "Error updating record: " . $con->error;
         }
 
-        
-        exit;
-    }
-
-
-    if (isset($_POST['employee_id'])) {
-        $employee_id = $_POST['employee_id'];
-
-
-        $sql = "SELECT contact, salary FROM employees WHERE employee_id = ?";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("i", $employee_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $sql = "SELECT contact, salary FROM employees WHERE employee_id = '$employee_id'";
+        $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
+
             $contact = $row['contact'];
             $salary = $row['salary'];
-        } else {
+        } 
+        else {
             echo "Employee not found.";
-            exit;
+            exit();
         }
-    } else {
-        echo "No employee ID provided.";
-        exit;
+    } 
+    else {
+        echo "Invalid request.";
+        exit();
     }
 ?>
 

@@ -4,7 +4,7 @@
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['feedback_id'])) {
-            $feedback_id = intval($_POST['feedback_id']); 
+            $feedback_id = $_POST['feedback_id']; 
 
             $sql = "DELETE FROM feedack WHERE feedback_id = $feedback_id";
 
