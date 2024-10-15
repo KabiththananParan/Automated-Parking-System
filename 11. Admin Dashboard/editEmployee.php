@@ -21,7 +21,8 @@
 
         if ($stmt->execute()) {
             echo "Employee details updated successfully!";
-            echo "<a href='main.php'>Go back to employee list</a>";
+            header("Location: ./admin.php"); 
+            exit();
         } else {
             echo "Error updating record: " . $con->error;
         }

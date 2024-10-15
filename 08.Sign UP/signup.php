@@ -150,13 +150,13 @@ if (isset($_POST["submit_btn"])) {
     $result2 = $con->query($checkUsername);
     
     if ($result->num_rows > 0) {
-        echo "This email is already registered. Please use a different email.";
+        echo "<script>alert('This email is already registered. Please use a different email.');</script>";
     }
 
     else {
 
         if ($result2->num_rows > 0) {
-            echo "This user name is taken.";
+            echo "<script>alert('This user name is taken.');</script>";
         }
 
         else {
@@ -164,9 +164,9 @@ if (isset($_POST["submit_btn"])) {
             $sql = "INSERT INTO users(name, user_name, email, password, phone, DOB) VALUES ('$Name', '$UserName', '$Email', '$Password', '$Phone', '$DOB')";
 
             if($con->query($sql)) {
-                echo "Account create sucecessfully. Now login with your email.";
+                echo "<script>alert('Account create sucecessfully. Now login with your email.');</script>";
                 Header("Location: ../07.Login/login.php");
-                        exit();   
+                exit();   
             }
             else {
                 echo "Error: " . $con->error;

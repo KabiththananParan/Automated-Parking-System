@@ -16,6 +16,14 @@
     min-height: 400px;
     border: 1px solid black;
     border-radius: 20px;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .text-area {
@@ -38,13 +46,14 @@
     padding: 10px;
 }
 
-.text-area button {
-    width: 80px;
+#btn {
+    width: 100px;
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
+    background-color: grey;
 }
 
 #thanks {

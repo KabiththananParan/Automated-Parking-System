@@ -67,8 +67,9 @@
                 Please leave your feedbacks here...
             </p>
             
-            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                <textarea name="msg" value="" id="feedbag" rows="17" cols="50">
+            <form id="feedbackForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <textarea name="msg" value="" id="feedbag" rows="17" cols="50" >
+                    
                 </textarea>
 
                 <input id="btn" type="submit" name="submit_btn" value="Submit">

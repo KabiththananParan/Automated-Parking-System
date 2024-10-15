@@ -137,7 +137,7 @@
                     exit();
                 }
                 else {
-                    echo "Login password incorrect!";
+                    echo "<script>alert('Login password incorrect!');</script>";
                 }
 
             }
@@ -163,16 +163,18 @@
                             exit();
                         }
                         else {
-                            echo "Failed to record your login." . $con->error;
+                            echo "<script>alert('Failed to record your login.');</script>" . $con->error;
                         }
                     }
                     else {
-                        echo "Password does not match." . $con->error;
+                        echo "<script>alert('Password does not match.');</script>" . $con->error;
                     }
 
                 }
                 else {
-                    echo "Email not registered. Register First!" . $con->error;
+                    echo "<script>alert('Email not registered. Register First!');</script>" . $con->error;
+                    // Header("Location: ../08.Sign UP/signup.php");
+                    // exit(); 
                 }
             }
         }

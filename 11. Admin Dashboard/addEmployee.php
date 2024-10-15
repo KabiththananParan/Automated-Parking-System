@@ -22,7 +22,7 @@
         
         if ($con->query($sql) === TRUE) {
             $_SESSION['message'] = "Employee added successfully";
-            header("Location: admin.php"); 
+            header("Location: ./admin.php"); 
             exit();
         } else {
             $_SESSION['message'] = "Error adding employee: " . $con->error;
