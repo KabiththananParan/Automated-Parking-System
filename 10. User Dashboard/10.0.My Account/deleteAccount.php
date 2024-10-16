@@ -14,7 +14,7 @@
             echo "Account deleted successfully!";
             
         
-            header("Location: account.php");
+            header("Location: ../01.Home\index.html");
             exit();
         } else {
             echo "Error deleting account: " . $con->error;

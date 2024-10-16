@@ -24,9 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
             showError(username, "Username is required.");
         }
         
+        const phonePattern = /^\+?\d{1,11}$/;  //Regex code from google.
         if (!phone.value.trim()) {
             isValid = false;
             showError(phone, "Phone number is required.");
+        } 
+        else if (!phonePattern.test(phone.value)) {
+            isValid = false;
+            showError(phone, "Phone number must contain only numbers and an optional + sign.");
         }
 
         if (!email.value.trim()) {
@@ -50,6 +55,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!dob.value) {
             isValid = false;
             showError(dob, "Date of Birth is required.");
+        } 
+        else {
+            const birthYear = new Date(dob.value).getFullYear();
+            if (birthYear >= 2024) {
+                isValid = false;
+                showError(dob, "Year of Birth must be less than 2024.");
+            }
         }
 
         if (!isValid) {

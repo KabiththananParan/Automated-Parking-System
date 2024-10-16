@@ -11,12 +11,12 @@
 
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $full_name = $con, $_POST['full_name'];
-        $email =$con, $_POST['email'];
-        $contact = $con, $_POST['contact'];
-        $dob = $con, $_POST['DOB'];
-        $nic = $con, $_POST['NIC'];
-        $salary = $con, $_POST['Salary'];
+        $full_name = $_POST['full_name'];
+        $email = $_POST['email'];
+        $contact = $_POST['contact'];
+        $dob =  $_POST['DOB'];
+        $nic =  $_POST['NIC'];
+        $salary =  $_POST['Salary'];
 
         $sql = "INSERT INTO employees (full_name, email, contact, DOB, NIC, Salary) VALUES ('$full_name', '$email', '$contact', '$dob', '$nic', '$salary')";
         

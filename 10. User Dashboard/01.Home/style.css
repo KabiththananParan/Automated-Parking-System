@@ -1,0 +1,221 @@
+/* content-1 */
+
+.content-1 {
+    background-image: linear-gradient(to bottom, rgba(0,8,120,1) 0%, rgba(95,184,224,1) 100%); /*From cssgradient.io page*/
+    text-align: center;
+    height: 450px;
+    position: relative;
+}
+
+.content-1-para {
+    padding-top: 20px;
+}
+
+.content-1 p {
+    display: inline;
+    font-weight: lighter;
+    font-size: 80px;
+    color: white;
+}
+
+.content-1 img {
+    position: absolute;
+    left: 350px;
+    top: 320px;
+    animation: carAnimation 5s forwards;
+} 
+
+@keyframes carAnimation {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+  
+
+.content-1-dottedCirecle {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border: 3px dotted rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    top: 250px;
+    left: 180px;
+    animation: movingDottedLines 4s linear infinite; 
+    overflow: hidden;
+} 
+
+.content-2-dottedCirecle {
+    overflow: hidden;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border: 3px dotted rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    top: 420px;
+    right: 250px;
+    animation: movingDottedLines 5s linear infinite; 
+}
+
+@keyframes movingDottedLines {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* content-2 */
+
+.content-2 {
+    height: 300px;
+    background: linear-gradient(180.3deg, rgb(221, 221, 221) 5.5%, rgb(110, 136, 161) 90.2%); /*From cssgradient.io page*/
+}
+
+.content-2-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 200px;
+}
+
+.content-2-btns button {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.content-2-button:hover {
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+
+/* Contenet-3 -- About US Page */
+
+.about {
+    width: 100%;
+    height: 1390px;
+    background-image: linear-gradient(to bottom, rgba(0,8,120,1) 0%, rgba(95,184,224,1) 100%);  /*From cssgradient.io page*/
+    padding: 10px;
+    color: white;
+    position: relative;
+}
+
+.about h2 {
+    font-size: 60px;
+    text-align: center;
+}
+
+.about-img {
+    position: relative;
+}
+
+.about-img p {
+    position: absolute;
+    left: 380px;
+    top: -80px;
+    font-size: 60px;
+    z-index: 1000;
+    font-weight: bolder;
+}
+.about-img span {
+    font-size: 25px;
+    z-index: 1000;
+}
+
+.about-img img {
+    position: absolute;
+    right: 300px;
+    top: 80px;
+    border: none;
+    border-radius: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 400px;
+    position: absolute;
+    top: 700px;
+    padding: 30px;
+}
+
+.about-content-left {
+    text-wrap: break-word;
+    margin-left: 20px;
+    
+}
+
+.about-content-left h1 {
+    font-size: 80px;
+}
+
+.about-content-left p {
+    font-size: 16px;
+    line-height: 2.2;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+}
+
+.about-content-arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-content-arrow span {
+    font-size: 25px;
+}
+
+.about-content-arrow img {
+    cursor: pointer;
+}
+
+
+.about-content-right {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    column-gap: 100px;
+    row-gap: 90px;
+    text-align: center;
+}
+
+.about-content-right span{
+    font-size: 60px;
+}
+
+.about-content-right p {
+    font-size: 20px;
+}
+
+.about-content-right img {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.about-content-right img:hover {
+    animation: iconAnimation 1.5s ease-in;
+}
+
+@keyframes iconAnimation {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
